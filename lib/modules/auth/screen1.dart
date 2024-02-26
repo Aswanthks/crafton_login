@@ -7,119 +7,87 @@ class screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return  Scaffold(body:Container(
-      margin: EdgeInsets.all(20),
-
-        backgroundColor: Colors.transparent,
-        body: Stack(
+    return  Scaffold( backgroundColor: Colors.white,
+      body: SingleChildScrollView( // Wrap the Column with SingleChildScrollView
+        child: Column(
+          // Aligns children to the start (left) of the column
           children: [
-
+            SizedBox(height: 1 * 60.0),
+            Text(
+              "Login",
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 70,
+            ),
             Container(
-              padding: EdgeInsets.only(left: 35, top: 130),
-              child: Text(
-                'Login Now',
-                style: TextStyle(color: Colors.white, fontSize: 33),
+              margin: EdgeInsets.all(10),
+              height: 60,
+              width: 350,
+              color: Colors.white,
+              child: TextField(
+                decoration: InputDecoration(
+                  border : OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+                  hintText: "Enter Email",
+                ),
               ),
             ),
-            SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.5),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 35, right: 35),
-                      child: Column(
-                        children: [
-                          TextField(
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Email",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          TextField(
-                            style: TextStyle(),
-                            obscureText: true,
-                            decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Password",
-                                suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Sign In',
-                                style: TextStyle(
-                                    fontSize: 27, fontWeight: FontWeight.w700),
-                              ),
-                              CircleAvatar(
-                                radius: 30,
-                                backgroundColor: Colors.white,
-                                child: IconButton(
-                                    color: Colors.black,
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.arrow_forward,
-                                    )),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, 'register');
-                                },
-                                child: Text(
-                                  'Sign Up',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontSize: 18),
-
-                                ),
-                                style: ButtonStyle(),
-                              ),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Forgot Password?',
-                                    style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                  )),
-                            ],
-                          )
-                        ],
+            SizedBox(height: 15),
+            Container(
+              height: 60,
+              width: 400,
+              margin: EdgeInsets.all(10),
+              color: Colors.white,
+              child: Row(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 340,
+                    color: Colors.white,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+                        hintText: "Enter Password",
+                        suffixIcon: Icon(Icons.visibility),
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 15),
+            TextButton(
+              onPressed: () {},
+              child: Text("Forget Password"),
+            ),
+            SizedBox(height: 25),
+            Container(
+              height: 50,
+              width: 300,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                onPressed: () {},
+                child: Text("login"),
+              ),
+            ),
+            SizedBox(height: 30),
+            Container(
+              height: 50,
+              width: 400,
+              margin: EdgeInsets.only(left: 75),
+              child: Row(
+                children: [
+                  Text("Dont have an account?"),
+                  SizedBox(width: 10),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Register",
+                      style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
